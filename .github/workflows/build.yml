@@ -55,6 +55,9 @@ jobs:
           java-version: '21'
           cache: 'gradle'
 
+      - name: Set up Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+        
       - name: Build dependencies
         run: |
           source ./buildenv.sh ${{ matrix.target }}
