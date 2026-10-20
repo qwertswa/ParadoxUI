@@ -1,34 +1,34 @@
-From fa0faa92bb96a9b8eea6f8287647bded901d1520 Mon Sep 17 00:00:00 2001
-From: Salvo Giangreco <giangrecosalvo9@gmail.com>
-Date: Fri, 17 Oct 2025 12:21:16 +0200
-Subject: [PATCH] Enable Smart View tile visibility settings on Android 16
+From b340411476e59b8fac0f6adf3d3be622706a6ddc Mon Sep 17 00:00:00 2001
+From: Devcore94 <devcore94@users.noreply.github.com>
+Date: Sat, 22 Aug 2026 01:37:49 +0200
+Subject: [PATCH] Enable Smart View tile visibility settings on QPR2
 
 ---
  smali/com/android/systemui/QpRune.smali | 12 +-----------
  1 file changed, 1 insertion(+), 11 deletions(-)
 
 diff --git a/smali/com/android/systemui/QpRune.smali b/smali/com/android/systemui/QpRune.smali
+index a9b9b4c..3ced897 100644
 --- a/smali/com/android/systemui/QpRune.smali
 +++ b/smali/com/android/systemui/QpRune.smali
-@@ -418,17 +418,7 @@
+@@ -422,17 +422,7 @@
  
-     sput-boolean v4, Lcom/android/systemui/QpRune;->QUICK_TILE_FLASHLIGHT_INTENSITY:Z
+     sput-boolean v5, Lcom/android/systemui/QpRune;->QUICK_TILE_FLASHLIGHT_INTENSITY:Z
  
 -    invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
 -
--    move-result-object v4
+-    move-result-object v5
 -
--    const-string v5, "CscFeature_Common_SupportZProjectFunctionInGlobal"
+-    const-string v6, "CscFeature_Common_SupportZProjectFunctionInGlobal"
 -
--    invoke-virtual {v4, v5, v3}, Lcom/samsung/android/feature/SemCscFeature;->getBoolean(Ljava/lang/String;Z)Z
+-    invoke-virtual {v5, v6, v3}, Lcom/samsung/android/feature/SemCscFeature;->getBoolean(Ljava/lang/String;Z)Z
 -
--    move-result v4
+-    move-result v5
 -
--    sput-boolean v4, Lcom/android/systemui/QpRune;->QUICK_TILE_HIDE_FROM_BAR:Z
-+    sput-boolean v3, Lcom/android/systemui/QpRune;->QUICK_TILE_HIDE_FROM_BAR:Z
+-    sput-boolean v5, Lcom/android/systemui/QpRune;->QUICK_TILE_HIDE_FROM_BAR:Z
++    sput-boolean v2, Lcom/android/systemui/QpRune;->QUICK_TILE_HIDE_FROM_BAR:Z
  
-     invoke-static {}, Lcom/samsung/android/feature/SemFloatingFeature;->getInstance()Lcom/samsung/android/feature/SemFloatingFeature;
+     sput-boolean v0, Lcom/android/systemui/QpRune;->QUICK_TILE_NO_ANIMATION:Z
  
-
 -- 
-2.51.1
+2.53.0
