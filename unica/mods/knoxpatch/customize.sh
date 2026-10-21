@@ -156,11 +156,11 @@ SMALI_PATCH "system" "system/framework/services.jar" \
 # upstream KnoxPatch behavior at the new constructor boundary: throw after
 # the Binder stub is initialised so SystemServer's existing catch path skips
 # registration without entering the missing KG30 vendor AIDL path.
-SMALI_PATCH "system" "system/framework/services.jar" \
-    "smali_classes2/com/samsung/android/knoxguard30/service/KnoxGuard30Service.smali" "replace" \
-    '<init>(Landroid/content/Context;)V' \
-    'sput-object p1, Lcom/samsung/android/knoxguard30/service/KnoxGuard30Service;->mContext:Landroid/content/Context;' \
-    '    new-instance v0, Ljava/lang/UnsupportedOperationException;\n\n    const-string v1, "KnoxGuard 3.0 is unsupported on this port"\n\n    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V\n\n    throw v0'
+# SMALI_PATCH "system" "system/framework/services.jar" \
+#    "smali_classes2/com/samsung/android/knoxguard30/service/KnoxGuard30Service.smali" "replace" \
+#    '<init>(Landroid/content/Context;)V' \
+#    'sput-object p1, Lcom/samsung/android/knoxguard30/service/KnoxGuard30Service;->mContext:Landroid/content/Context;' \
+#   '    new-instance v0, Ljava/lang/UnsupportedOperationException;\n\n    const-string v1, "KnoxGuard 3.0 is unsupported on this port"\n\n    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V\n\n    throw v0'
 
 # Knox Matrix 3.x verifies parsed attestation objects through FabricCertUtil.
 # Patch the decision points as well as the value-object accessors used by its
